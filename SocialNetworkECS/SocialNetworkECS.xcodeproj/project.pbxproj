@@ -14,6 +14,8 @@
 		C0E123EE296F08C5005C9500 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E123ED296F08C5005C9500 /* ProfileView.swift */; };
 		C0E123F0296F08D4005C9500 /* AddPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E123EF296F08D4005C9500 /* AddPostView.swift */; };
 		C0E123F3296F08FA005C9500 /* ProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E123F2296F08FA005C9500 /* ProfileHeader.swift */; };
+		C0E123F829705EFB005C9500 /* PostsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E123F729705EFB005C9500 /* PostsModel.swift */; };
+		C0E123FA29705F04005C9500 /* PostsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E123F929705F04005C9500 /* PostsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		C0E123ED296F08C5005C9500 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		C0E123EF296F08D4005C9500 /* AddPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostView.swift; sourceTree = "<group>"; };
 		C0E123F2296F08FA005C9500 /* ProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeader.swift; sourceTree = "<group>"; };
+		C0E123F729705EFB005C9500 /* PostsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsModel.swift; sourceTree = "<group>"; };
+		C0E123F929705F04005C9500 /* PostsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +93,7 @@
 		C0E123EB296F08A0005C9500 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				C0E123F929705F04005C9500 /* PostsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -96,6 +101,7 @@
 		C0E123EC296F08B2005C9500 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C0E123F729705EFB005C9500 /* PostsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -204,6 +210,8 @@
 				C0E123F0296F08D4005C9500 /* AddPostView.swift in Sources */,
 				C0E123F3296F08FA005C9500 /* ProfileHeader.swift in Sources */,
 				C0E123DD296F05EB005C9500 /* SocialNetworkECSApp.swift in Sources */,
+				C0E123F829705EFB005C9500 /* PostsModel.swift in Sources */,
+				C0E123FA29705F04005C9500 /* PostsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
