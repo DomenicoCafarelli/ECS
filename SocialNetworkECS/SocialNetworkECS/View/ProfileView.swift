@@ -9,7 +9,14 @@ import SwiftUI
 
 struct ProfileView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+                .toolbar {
+                    NavigationLink(destination: AddPostView()) {
+                        Image(systemName: "plus")
+                    }
+                }
+        }
     }
 }
 

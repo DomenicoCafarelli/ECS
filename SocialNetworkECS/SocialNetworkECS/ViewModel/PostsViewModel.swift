@@ -7,7 +7,7 @@
 
 import Foundation
 
-class PostsViewModel: ObservableObject{
+class PostsViewModel: ObservableObject {
     @Published var postStore: [Post] = [
         
         Post(description: "immagine1", imageName: "prova_1"),
