@@ -13,11 +13,16 @@ struct GridView: View {
         NavigationStack {
             LazyVGrid(columns: [.init(.adaptive(minimum: 100, maximum: .infinity), spacing: 3)]) {
                 ForEach(postViewModel.postStore) { post in
-                    NavigationLink{
+                    NavigationLink {
 //                        Future Detail post view
                         Text(post.description)
                     } label: {
                         post.image
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+                            .clipped()
+                            .aspectRatio(1, contentMode: .fit)
                     }
                 }
             }
@@ -31,5 +36,6 @@ struct GridView: View {
 struct GridView_Previews: PreviewProvider {
     static var previews: some View {
         GridView()
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
