@@ -21,7 +21,7 @@ struct ProfileHeader: View {
             Button{
                 showingOptions = true
             }label: {
-                Image("prova")
+                Image("prova_1")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 90, height: 90)

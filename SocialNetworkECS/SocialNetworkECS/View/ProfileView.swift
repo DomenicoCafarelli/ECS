@@ -10,12 +10,29 @@ import SwiftUI
 struct ProfileView: View {
     var body: some View {
         NavigationView {
-            Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-                .toolbar {
-                    NavigationLink(destination: AddPostView()) {
-                        Image(systemName: "plus")
-                    }
+            VStack{
+                ProfileHeader()
+
+                Spacer()
+
+                CollectionSelection()
+                    .padding(.top, 60)
+
+                Spacer()
+
+                Text("21 Posts")
+                    .padding(.top, 30)
+
+                Spacer()
+
+                GridView()
+                    .padding(.top, 40)
+            }
+            .toolbar {
+                NavigationLink(destination: AddPostView()) {
+                    Image(systemName: "plus")
                 }
+            }
         }
     }
 }

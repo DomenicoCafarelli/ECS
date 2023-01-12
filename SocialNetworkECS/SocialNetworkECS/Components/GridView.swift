@@ -9,25 +9,30 @@ import SwiftUI
 
 struct GridView: View {
     @StateObject var postViewModel = PostsViewModel()
+
+    private var threeColumnGrid = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
+
     var body: some View {
         NavigationStack {
-            LazyVGrid(columns: [.init(.adaptive(minimum: 100, maximum: .infinity), spacing: 3)]) {
-                ForEach(postViewModel.postStore) { post in
-                    NavigationLink {
-//                        Future Detail post view
-                        Text(post.description)
-                    } label: {
-                        post.image
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
-                            .clipped()
-                            .aspectRatio(1, contentMode: .fit)
+            ScrollView(showsIndicators: false){
+                LazyVGrid(columns: threeColumnGrid, spacing: 4) {
+                    ForEach(postViewModel.postStore) { post in
+                        NavigationLink {
+                            //                        Future Detail post view
+                            Text(post.description)
+                        } label: {
+                            post.image
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+                                .clipped()
+                                .aspectRatio(1, contentMode: .fit)
+                        }
                     }
                 }
-            }
-            .navigationDestination(for: Post.self) { post in
-                Text(post.description)
+                .navigationDestination(for: Post.self) { post in
+                    Text(post.description)
+                }
             }
         }
     }
