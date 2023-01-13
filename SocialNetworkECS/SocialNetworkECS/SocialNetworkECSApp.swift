@@ -11,7 +11,7 @@ import SwiftUI
 struct SocialNetworkECSApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ProfileView()
         }
     }
 }

@@ -19,7 +19,7 @@ struct GridView: View {
                     ForEach(postViewModel.postStore) { post in
                         NavigationLink {
                             //                        Future Detail post view
-                            Text(post.description)
+                            PostView(post: post)
                         } label: {
                             post.image
                                 .resizable()
@@ -31,7 +31,7 @@ struct GridView: View {
                     }
                 }
                 .navigationDestination(for: Post.self) { post in
-                    Text(post.description)
+                    PostView(post: post)
                 }
             }
         }
