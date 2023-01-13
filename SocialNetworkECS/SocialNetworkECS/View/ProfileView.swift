@@ -10,6 +10,7 @@ import SwiftUI
 struct ProfileView: View {
     
     @StateObject var postsViewModel = PostsViewModel()
+    @State var user : User
     
     var body: some View {
         NavigationStack {
@@ -18,7 +19,7 @@ struct ProfileView: View {
 
                 Spacer()
 
-                CollectionSelection()
+                CollectionSelection(user: $user)
                     .padding(.top, 60)
 
                 Spacer()
@@ -41,8 +42,8 @@ struct ProfileView: View {
     }
 }
 
-struct ProfileView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProfileView()
-    }
-}
+//struct ProfileView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ProfileView()
+//    }
+//}

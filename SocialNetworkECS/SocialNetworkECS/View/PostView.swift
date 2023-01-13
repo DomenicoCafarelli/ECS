@@ -11,10 +11,8 @@ struct PostView: View {
     @State var backDegree = 90.0
     @State var frontDegree = 0.0
     @State var isFlipped = false
-    
-    let width : CGFloat = 200
-    let height : CGFloat = 250
-    let durationAndDelay : CGFloat = 0.3
+
+    let durationAndDelay : CGFloat = 0.2
     
     let post : Post
     
@@ -24,11 +22,12 @@ struct PostView: View {
         
         VStack {
             ZStack {
-                CardFront(width: width, height: height, degree: $frontDegree, image: post.image)
-                CardBack(width: width, height: height, degree: $backDegree, text: post.description)
+                CardFront(width: UIScreen.main.bounds.width/1.2, height: UIScreen.main.bounds.height/1.5, degree: $frontDegree, image: post.image)
+                CardBack(width: UIScreen.main.bounds.width/1.2, height: UIScreen.main.bounds.height/1.5, degree: $backDegree, text: post.code)
             }.onTapGesture {
                 flipCard ()
             }
+            Text("From \(post.collections.joined(separator: ",")) collection")
             Text(post.description)
             
             Spacer()
