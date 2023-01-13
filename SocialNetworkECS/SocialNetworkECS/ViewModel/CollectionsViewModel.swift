@@ -8,8 +8,8 @@
 import Foundation
 
 class CollectionsViewModel: ObservableObject{
-    
-    @Published var collectionsStore: [Collections] = [
+
+    @Published var collectionsStore: [Collections] = [
     Collections(collectionName: "Animations"),
     Collections(collectionName: "Components"),
     Collections(collectionName: "Components")

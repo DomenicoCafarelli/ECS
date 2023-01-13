@@ -10,6 +10,8 @@ import PhotosUI
 
 struct ProfileHeader: View {
 
+    @StateObject  var userViewModel = UsersViewModel()
+
     @State private var selectedItem: PhotosPickerItem? = nil
     @State private var showingOptions = false
     @State private var selection = "None"
@@ -20,6 +22,8 @@ struct ProfileHeader: View {
 
             Button{
                 showingOptions = true
+
+
             }label: {
                 Image("prova_1")
                     .resizable()
@@ -29,11 +33,19 @@ struct ProfileHeader: View {
             }.confirmationDialog("Choose an action", isPresented: $showingOptions, titleVisibility: .visible) {
                 Button("View Photo") {
                     selection = "View Photo"
+
                 }
-                Button("Edit Photo") {
-                    selection = "Edit Photo"
+                Button("Choose Photo") {
+                    selection = "Choose Photo"
+                    PhotosPicker(
+                        selection: $selectedItem,
+                        matching: .images,
+                        photoLibrary: .shared()) {
+                            Text("Select a photo")
+                        }
                     print("edit")
                 }
+
                 Button("Delete Photo", role: .destructive) {
                     selection = "Delete Photo"
                 }

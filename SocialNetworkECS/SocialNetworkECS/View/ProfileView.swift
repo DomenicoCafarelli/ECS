@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ProfileView: View {
+    
+    @StateObject var postsViewModel = PostsViewModel()
+    
     var body: some View {
         NavigationView {
             VStack{
@@ -20,8 +23,9 @@ struct ProfileView: View {
 
                 Spacer()
 
-                Text("21 Posts")
+                Text("\(postsViewModel.postStore.count)   Posts")
                     .padding(.top, 30)
+                
 
                 Spacer()
 
