@@ -12,7 +12,7 @@ struct ProfileView: View {
     @StateObject var postsViewModel = PostsViewModel()
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack{
                 ProfileHeader()
 
