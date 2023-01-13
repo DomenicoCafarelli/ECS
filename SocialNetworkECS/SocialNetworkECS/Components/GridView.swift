@@ -14,7 +14,6 @@ struct GridView: View {
 
     var body: some View {
         NavigationStack {
-            ScrollView(showsIndicators: false){
                 LazyVGrid(columns: threeColumnGrid, spacing: 4) {
                     ForEach(postViewModel.postStore) { post in
                         NavigationLink {
@@ -33,7 +32,7 @@ struct GridView: View {
                 .navigationDestination(for: Post.self) { post in
                     PostView(post: post)
                 }
-            }
+            
         }
     }
 }
