@@ -16,4 +16,5 @@ struct User: Identifiable, Hashable{
     var userProfileImage: Image {
         Image(userProfileImageName)
     }
+    var collections: [String]
 }

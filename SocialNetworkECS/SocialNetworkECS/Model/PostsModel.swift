@@ -12,7 +12,9 @@ struct Post: Identifiable, Hashable {
     var id = UUID()
     var description: String
     var imageName: String
+    var code: String
     var image: Image {
         Image(imageName)
     }
+    var collections : [String]
 }

@@ -9,9 +9,10 @@ import SwiftUI
 
 @main
 struct SocialNetworkECSApp: App {
+    @StateObject var userViewModel = UsersViewModel()
     var body: some Scene {
         WindowGroup {
-            ProfileView()
+            ProfileView(user: userViewModel.userInformationStore.first!)
         }
     }
 }

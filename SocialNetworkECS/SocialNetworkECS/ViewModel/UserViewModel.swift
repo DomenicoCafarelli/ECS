@@ -11,6 +11,6 @@ class UsersViewModel: ObservableObject{
     
     @Published var userInformationStore: [User] = [
 
-        User(userName: "Domenico Cafarelli", userProfileImageName: "user_1")
+        User(userName: "Domenico Cafarelli", userProfileImageName: "user_1",collections: ["Animations","Buttons","Components"])
     ]
 }

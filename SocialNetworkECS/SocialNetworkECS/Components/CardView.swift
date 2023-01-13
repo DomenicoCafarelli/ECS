@@ -43,6 +43,9 @@ struct CardBack : View {
             RoundedRectangle(cornerRadius: 20)
                 .stroke(.blue.opacity(0.7), lineWidth: 3)
                 .frame(width: width, height: height)
+            //TODO: Reposition
+            Image(systemName: "doc.on.doc")
+            
             
             Text(text)
                 .frame(width: width,height: height)
