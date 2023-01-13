@@ -4,6 +4,7 @@
 //
 //  Created by Edoardo Troianiello on 13/01/23.
 //
+// swiftlint:disable all
 
 
 import SwiftUI

@@ -5,6 +5,8 @@
 //  Created by Domenico Cafarelli on 11/01/23.
 //
 
+// swiftlint:disable all
+
 import SwiftUI
 import PhotosUI
 
@@ -60,10 +62,3 @@ struct ProfileHeader_Previews: PreviewProvider {
         ProfileHeader()
     }
 }
-// Code for the photo picker
-//            PhotosPicker(
-//                selection: $selectedItem,
-//                matching: .images,
-//                photoLibrary: .shared()) {
-//                    Text("Select a photo")
-//                }
