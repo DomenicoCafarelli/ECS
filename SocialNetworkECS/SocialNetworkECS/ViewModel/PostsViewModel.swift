@@ -26,4 +26,8 @@ class PostsViewModel: ObservableObject {
         
         
     ]
+    
+    func addNewPost(post: Post){
+        self.postStore.append(post)
+    }
 }

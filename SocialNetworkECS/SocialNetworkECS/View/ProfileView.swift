@@ -32,8 +32,8 @@ struct ProfileView: View {
                     
                     
                     Spacer()
-                    //TODO: needs to be changed when view model function are completed, we should pass here only the posts relative to the user passed to this view. Not the whole store.
-                    GridView(posts: postsViewModel.postStore)
+                    
+                    GridView()
                         .padding(.top, 40)
                 }
                 .toolbar {

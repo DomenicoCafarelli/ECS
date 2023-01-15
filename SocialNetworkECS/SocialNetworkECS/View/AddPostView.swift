@@ -6,10 +6,16 @@
 //
 // swiftlint:disable all
 
+
+//TODO: Needs to be added the photo selection for the post, right now it creates a post with hard coded image.
+
 import SwiftUI
 
 struct AddPostView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
+    @EnvironmentObject var postsViewModel : PostsViewModel
+    @EnvironmentObject var userViewModel : UsersViewModel
 
     var btnBack: some View { Button(action: {
             self.presentationMode.wrappedValue.dismiss()
@@ -21,6 +27,10 @@ struct AddPostView: View {
     
     var btnSave: some View { Button(action: {
             //publish the post
+        //TODO: posterUsername is hardcoded needs to be passed to this view in oreder to create the post relative to a specific user
+        var post = Post(description: addDescrField, imageName: "", code:  codeTextField, collections: ["Animations", "Buttons"])
+        self.postsViewModel.addNewPost(post: post)
+        self.presentationMode.wrappedValue.dismiss()
             }){
                     Text("Save")
             }

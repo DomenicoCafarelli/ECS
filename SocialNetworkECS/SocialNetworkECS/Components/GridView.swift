@@ -6,19 +6,19 @@
 //
 // swiftlint:disable all
 
+//TODO: future implementation: show only the posts relative to a specific user. show only the posts relative to a specific collection (we should pass the selected collection from the parent view)
+
 import SwiftUI
 
 struct GridView: View {
-    @State var posts : [Post]
-    
-    // needed to change the private here, it caused the init to be inaccessible.
-    var threeColumnGrid = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
+    @EnvironmentObject var postsViewModel : PostsViewModel
+    private var threeColumnGrid = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
     
 
     var body: some View {
         NavigationStack {
                 LazyVGrid(columns: threeColumnGrid, spacing: 4) {
-                    ForEach(posts) { post in
+                    ForEach(postsViewModel.postStore) { post in
                         NavigationLink {
                             //                        Future Detail post view
                             PostView(post: post)
