@@ -10,14 +10,15 @@ import SwiftUI
 
 struct ProfileView: View {
     
-    @StateObject var postsViewModel = PostsViewModel()
+    @EnvironmentObject var postsViewModel : PostsViewModel
+    @EnvironmentObject var userViewModel : UsersViewModel
     @State var user : User
     
     var body: some View {
         NavigationStack {
             ScrollView(showsIndicators: false){
                 VStack{
-                    ProfileHeader()
+                    ProfileHeader(user: $user)
                     
                     Spacer()
                     
@@ -31,8 +32,8 @@ struct ProfileView: View {
                     
                     
                     Spacer()
-                    
-                    GridView()
+                    //TODO: needs to be changed when view model function are completed, we should pass here only the posts relative to the user passed to this view. Not the whole store.
+                    GridView(posts: postsViewModel.postStore)
                         .padding(.top, 40)
                 }
                 .toolbar {

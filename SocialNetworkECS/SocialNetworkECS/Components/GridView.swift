@@ -9,14 +9,16 @@
 import SwiftUI
 
 struct GridView: View {
-    @StateObject var postViewModel = PostsViewModel()
-
-    private var threeColumnGrid = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
+    @State var posts : [Post]
+    
+    // needed to change the private here, it caused the init to be inaccessible.
+    var threeColumnGrid = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
+    
 
     var body: some View {
         NavigationStack {
                 LazyVGrid(columns: threeColumnGrid, spacing: 4) {
-                    ForEach(postViewModel.postStore) { post in
+                    ForEach(posts) { post in
                         NavigationLink {
                             //                        Future Detail post view
                             PostView(post: post)
@@ -38,9 +40,9 @@ struct GridView: View {
     }
 }
 
-struct GridView_Previews: PreviewProvider {
-    static var previews: some View {
-        GridView()
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-    }
-}
+//struct GridView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        GridView()
+//            .frame(maxWidth: .infinity, maxHeight: .infinity)
+//    }
+//}
