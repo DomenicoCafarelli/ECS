@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		290023D82971BB3F00533146 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290023D72971BB3F00533146 /* FeedView.swift */; };
 		2944299E29705FA800B73BD4 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2944299D29705FA800B73BD4 /* GridView.swift */; };
 		AA79B32229714E7300890E44 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA79B32129714E7300890E44 /* CardView.swift */; };
 		AA79B32429714EF400890E44 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA79B32329714EF400890E44 /* PostView.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		290023D72971BB3F00533146 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		2944299D29705FA800B73BD4 /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
 		AA79B32129714E7300890E44 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		AA79B32329714EF400890E44 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				C0E123DE296F05EB005C9500 /* ContentView.swift */,
 				C0E123ED296F08C5005C9500 /* ProfileView.swift */,
 				C0E123EF296F08D4005C9500 /* AddPostView.swift */,
+				290023D72971BB3F00533146 /* FeedView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				290023D82971BB3F00533146 /* FeedView.swift in Sources */,
 				AA79B32229714E7300890E44 /* CardView.swift in Sources */,
 				C0E123DF296F05EB005C9500 /* ContentView.swift in Sources */,
 				C0E123FC29708A6A005C9500 /* CollectionSelection.swift in Sources */,

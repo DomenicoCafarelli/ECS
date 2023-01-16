@@ -14,19 +14,26 @@ struct GridView: View {
     private var threeColumnGrid = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
 
     var body: some View {
+        ScrollViewReader { proxy in
         NavigationStack {
                 LazyVGrid(columns: threeColumnGrid, spacing: 4) {
+                    
                     ForEach(postViewModel.postStore) { post in
-                        NavigationLink {
-                            //                        Future Detail post view
-                            PostView(post: post)
-                        } label: {
-                            post.image
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
-                                .clipped()
-                                .aspectRatio(1, contentMode: .fit)
+                         
+                            NavigationLink {
+                                //                        Future Detail post view
+    //                            PostView(post: post)
+                                FeedView()
+                                
+                                
+                            } label: {
+                                post.image
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+                                    .clipped()
+                                    .aspectRatio(1, contentMode: .fit)
+                        }
                         }
                     }
                 }
