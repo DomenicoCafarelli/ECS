@@ -21,7 +21,7 @@ struct CardFront : View {
                 .fill(.white)
                 .frame(width: width, height: height)
                 .shadow(color: .gray, radius: 2, x: 0, y: 0)
-
+            
             image
                 .resizable()
                 .scaledToFit()
@@ -37,23 +37,39 @@ struct CardBack : View {
     let height : CGFloat
     @Binding var degree : Double
     let text : String
-
+    
     
     var body: some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: 20)
-                .stroke(.blue.opacity(0.7), lineWidth: 3)
-                .frame(width: width, height: height)
-            //TODO: Reposition
-            Image(systemName: "doc.on.doc")
+        
+        VStack{
             
+            HStack{
+                
+                Spacer()
+                
+                Button {
+                    //copy code function
+                } label: {
+                    HStack{
+                        Text("Copy code")
+                        Image(systemName: "doc.on.doc")
+                    }.padding()
+                    
+                        .background(Color.gray.opacity(0.2))
+                        .cornerRadius(5)
+                }
+                
+                
+            }.padding()
+            
+            Spacer()
             
             Text(text)
-                .frame(width: width,height: height)
             
-        }.rotation3DEffect(Angle(degrees: degree), axis: (x: 0, y: 1, z: 0))
-        
+            Spacer()
+            
+        }.frame(width: width, height: height)
+            .border(.blue)
+            .rotation3DEffect(Angle(degrees: degree), axis: (x: 0, y: 1, z: 0))
     }
 }
-
-
