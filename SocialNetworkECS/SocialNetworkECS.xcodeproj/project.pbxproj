@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		290023D82971BB3F00533146 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290023D72971BB3F00533146 /* FeedView.swift */; };
 		2944299E29705FA800B73BD4 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2944299D29705FA800B73BD4 /* GridView.swift */; };
+		298CE05E2975917700FEF1DC /* NewCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298CE05D2975917700FEF1DC /* NewCollectionView.swift */; };
 		AA79B32229714E7300890E44 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA79B32129714E7300890E44 /* CardView.swift */; };
 		AA79B32429714EF400890E44 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA79B32329714EF400890E44 /* PostView.swift */; };
 		C0E123DD296F05EB005C9500 /* SocialNetworkECSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E123DC296F05EB005C9500 /* SocialNetworkECSApp.swift */; };
@@ -28,6 +29,7 @@
 /* Begin PBXFileReference section */
 		290023D72971BB3F00533146 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		2944299D29705FA800B73BD4 /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
+		298CE05D2975917700FEF1DC /* NewCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCollectionView.swift; sourceTree = "<group>"; };
 		AA79B32129714E7300890E44 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		AA79B32329714EF400890E44 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 		C0E123D9296F05EB005C9500 /* SocialNetworkECS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialNetworkECS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,6 +104,7 @@
 				C0E123ED296F08C5005C9500 /* ProfileView.swift */,
 				C0E123EF296F08D4005C9500 /* AddPostView.swift */,
 				290023D72971BB3F00533146 /* FeedView.swift */,
+				298CE05D2975917700FEF1DC /* NewCollectionView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 			files = (
 				290023D82971BB3F00533146 /* FeedView.swift in Sources */,
 				AA79B32229714E7300890E44 /* CardView.swift in Sources */,
+				298CE05E2975917700FEF1DC /* NewCollectionView.swift in Sources */,
 				C0E123DF296F05EB005C9500 /* ContentView.swift in Sources */,
 				C0E123FC29708A6A005C9500 /* CollectionSelection.swift in Sources */,
 				C0E123EE296F08C5005C9500 /* ProfileView.swift in Sources */,

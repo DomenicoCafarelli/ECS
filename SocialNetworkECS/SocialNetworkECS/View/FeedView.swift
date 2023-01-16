@@ -11,7 +11,7 @@ import SwiftUI
 
 struct FeedView: View {
     
-    @StateObject var postViewModel = PostsViewModel()
+    @EnvironmentObject var postViewModel: PostsViewModel
     @State var post : Post
     var body: some View {
         ScrollViewReader { value in
