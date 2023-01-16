@@ -12,7 +12,7 @@ struct PostView: View {
     @State var backDegree = 90.0
     @State var frontDegree = 0.0
     @State var isFlipped = false
-
+    
     let durationAndDelay : CGFloat = 0.2
     
     let post : Post
@@ -21,19 +21,25 @@ struct PostView: View {
     //MARK: View Body
     var body: some View {
         
-        VStack {
+        VStack{
             ZStack {
                 CardFront(width: UIScreen.main.bounds.width/1.2, height: UIScreen.main.bounds.height/1.5, degree: $frontDegree, image: post.image)
                 CardBack(width: UIScreen.main.bounds.width/1.2, height: UIScreen.main.bounds.height/1.5, degree: $backDegree, text: post.code)
             }.onTapGesture {
                 flipCard ()
             }
-            Text("From \(post.collections.joined(separator: ",")) collection")
-            Text(post.description)
+            
+            VStack(alignment: .leading, spacing: 65){
+                Text(post.description)
+                HStack{
+                    Text("From")
+                    Text("\(post.collections.joined(separator: ","))").bold()
+                    Text("collection")
+                }
+            }.padding(.horizontal)
             
             Spacer()
         }
-        
     }
     
     
@@ -58,8 +64,8 @@ struct PostView: View {
     }
 }
 
-//struct PostView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        PostView()
-//    }
-//}
+struct PostView_Previews: PreviewProvider {
+    static var previews: some View {
+        PostView(post: .init(description: "Lorem Ipsum Doler Sit Amet Lorem Ipsum Doler Sit Amet", imageName: "prova_1", code: "codice di prova in preview", collections: ["Animations"]))
+    }
+}
