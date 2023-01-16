@@ -6,12 +6,14 @@
 //
 // swiftlint:disable all
 
+//TODO: future implementation: show only the posts relative to a specific user. show only the posts relative to a specific collection (we should pass the selected collection from the parent view)
+
 import SwiftUI
 
 struct GridView: View {
-    @StateObject var postViewModel = PostsViewModel()
-
+    @EnvironmentObject var postsViewModel : PostsViewModel
     private var threeColumnGrid = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
+    
 
     var body: some View {
         ScrollViewReader { proxy in
@@ -45,9 +47,9 @@ struct GridView: View {
     }
 }
 
-struct GridView_Previews: PreviewProvider {
-    static var previews: some View {
-        GridView()
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-    }
-}
+//struct GridView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        GridView()
+//            .frame(maxWidth: .infinity, maxHeight: .infinity)
+//    }
+//}

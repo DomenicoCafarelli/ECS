@@ -12,11 +12,11 @@ import PhotosUI
 
 struct ProfileHeader: View {
 
-    @StateObject  var userViewModel = UsersViewModel()
-
     @State private var selectedItem: PhotosPickerItem? = nil
     @State private var showingOptions = false
     @State private var selection = "None"
+    
+    @Binding var user : User
 
     var body: some View {
 
@@ -27,7 +27,7 @@ struct ProfileHeader: View {
 
 
             }label: {
-                Image("prova_1")
+                user.userProfileImage
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 90, height: 90)
@@ -52,13 +52,13 @@ struct ProfileHeader: View {
                     selection = "Delete Photo"
                 }
             }
-            Text("Domenico Cafarelli")
+            Text(user.userName)
         }.font(.title3).bold()
     }
 }
 
-struct ProfileHeader_Previews: PreviewProvider {
-    static var previews: some View {
-        ProfileHeader()
-    }
-}
+//struct ProfileHeader_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ProfileHeader()
+//    }
+//}

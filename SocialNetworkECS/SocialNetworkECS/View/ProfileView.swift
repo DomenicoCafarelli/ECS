@@ -10,14 +10,15 @@ import SwiftUI
 
 struct ProfileView: View {
     
-    @StateObject var postsViewModel = PostsViewModel()
+    @EnvironmentObject var postsViewModel : PostsViewModel
+    @EnvironmentObject var userViewModel : UsersViewModel
     @State var user : User
     
     var body: some View {
         NavigationStack {
             ScrollView(showsIndicators: false){
                 VStack{
-                    ProfileHeader()
+                    ProfileHeader(user: $user)
                     
                     Spacer()
                     

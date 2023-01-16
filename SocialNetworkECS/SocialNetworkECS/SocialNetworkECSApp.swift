@@ -12,9 +12,13 @@ import SwiftUI
 @main
 struct SocialNetworkECSApp: App {
     @StateObject var userViewModel = UsersViewModel()
+    @StateObject var postViewModel = PostsViewModel()
+
     var body: some Scene {
         WindowGroup {
             ProfileView(user: userViewModel.userInformationStore.first!)
+                .environmentObject(userViewModel)
+                .environmentObject(postViewModel)
         }
     }
 }

@@ -18,4 +18,5 @@ struct Post: Identifiable, Hashable {
         Image(imageName)
     }
     var collections : [String]
+//    var userId : UUID
 }
