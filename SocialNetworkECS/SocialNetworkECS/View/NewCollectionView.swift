@@ -11,6 +11,8 @@ import SwiftUI
 struct NewCollectionView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
+    @EnvironmentObject var collectionViewModel: CollectionViewModel
+    
     var btnCancel: some View { Button(action: {
             self.presentationMode.wrappedValue.dismiss()
 
@@ -20,7 +22,8 @@ struct NewCollectionView: View {
         }
     
     var btnSave: some View { Button(action: {
- 
+        var collection = Collection(name: nameTextField)
+        self.collectionViewModel.addNewCollection(collection: collection)
         self.presentationMode.wrappedValue.dismiss()
             }){
                     Text("Add")

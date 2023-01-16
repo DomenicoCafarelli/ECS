@@ -70,6 +70,7 @@ struct AddPostView: View {
                     NewCollectionView()
                         .presentationDetents([.medium])
                 }
+                //add created collections to choose here
             }
             .padding()
             Spacer()
