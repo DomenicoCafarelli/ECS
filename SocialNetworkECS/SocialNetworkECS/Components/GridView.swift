@@ -14,34 +14,44 @@ struct GridView: View {
     @EnvironmentObject var postsViewModel : PostsViewModel
     private var threeColumnGrid = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
     
-
+    @State private var selection: Post.ID?
+    
     var body: some View {
         ScrollViewReader { proxy in
-        NavigationStack {
+            NavigationStack {
                 LazyVGrid(columns: threeColumnGrid, spacing: 4) {
                     
-                    ForEach(postViewModel.postStore) { post in
-                         
-                            NavigationLink {
-                                //                        Future Detail post view
-    //                            PostView(post: post)
-                                FeedView()
-                                
-                                
-                            } label: {
-                                post.image
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fill)
-                                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
-                                    .clipped()
-                                    .aspectRatio(1, contentMode: .fit)
-                        }
+                    ForEach(postsViewModel.postStore) { post in
+                        
+                        //                            NavigationLink {
+                        //                                //                        Future Detail post view
+                        //    //                            PostView(post: post)
+                        //                                FeedView()
+                        //
+                        //
+                        //                            } label: {
+                        //                                post.image
+                        //                                    .resizable()
+                        //                                    .aspectRatio(contentMode: .fill)
+                        //                                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+                        //                                    .clipped()
+                        //                                    .aspectRatio(1, contentMode: .fit)
+                        //                        }
+                        NavigationLink(destination: FeedView(post: post),
+                                       tag: post.id, selection: $selection) {
+                            post.image
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+                                .clipped()
+                                .aspectRatio(1, contentMode: .fit)
                         }
                     }
                 }
-                .navigationDestination(for: Post.self) { post in
-                    PostView(post: post)
-                }
+            }
+            .navigationDestination(for: Post.self) { post in
+                PostView(post: post)
+            }
             
         }
     }

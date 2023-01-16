@@ -12,21 +12,26 @@ import SwiftUI
 struct FeedView: View {
     
     @StateObject var postViewModel = PostsViewModel()
-    
+    @State var post : Post
     var body: some View {
-//        ScrollViewReader { value in
+        ScrollViewReader { value in
             ScrollView() {
                 ForEach(postViewModel.postStore) { post in
                     PostView(post: post)
+                        .id(post.description)
                 }
             }
-//        }
+            .onAppear {
+                value.scrollTo(post.description)
+            }
+            
         }
     }
-
-
-struct FeedView_Previews: PreviewProvider {
-    static var previews: some View {
-        FeedView()
-    }
 }
+
+
+//struct FeedView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        FeedView()
+//    }
+//}
