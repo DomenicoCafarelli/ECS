@@ -13,6 +13,7 @@ import SwiftUI
 
 struct AddPostView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @State private var showingCredits = false
     
     @EnvironmentObject var postsViewModel : PostsViewModel
     @EnvironmentObject var userViewModel : UsersViewModel
@@ -37,6 +38,7 @@ struct AddPostView: View {
         }
     var btnAddCollect: some View { Button(action: {
         //add collection
+        showingCredits.toggle()
     }){
         Image(systemName: "plus")
             .padding(.all, 10)
@@ -64,7 +66,10 @@ struct AddPostView: View {
                 .padding(.leading)
 //            Spacer()
             HStack {
-                btnAddCollect
+                btnAddCollect.sheet(isPresented: $showingCredits) {
+                    NewCollectionView()
+                        .presentationDetents([.medium])
+                }
             }
             .padding()
             Spacer()
