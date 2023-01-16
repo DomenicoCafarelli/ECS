@@ -17,6 +17,7 @@ struct AddPostView: View {
     
     @EnvironmentObject var postsViewModel : PostsViewModel
     @EnvironmentObject var userViewModel : UsersViewModel
+    @EnvironmentObject var collectionViewModel : CollectionViewModel
 
     var btnBack: some View { Button(action: {
             self.presentationMode.wrappedValue.dismiss()
@@ -71,6 +72,14 @@ struct AddPostView: View {
                         .presentationDetents([.medium])
                 }
                 //add created collections to choose here
+                ForEach(collectionViewModel.collectionStore) { collection in
+                    Text(collection.name)
+                        .padding(.all, 8)
+                        .multilineTextAlignment(.center)
+                        .background(Color.gray.opacity(0.2))
+                        .cornerRadius(8)
+                        
+                }
             }
             .padding()
             Spacer()

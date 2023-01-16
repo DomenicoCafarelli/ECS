@@ -9,7 +9,7 @@ import Foundation
 
 class CollectionViewModel: ObservableObject {
     @Published var collectionStore: [Collection] = [
-        Collection(name: "")
+//        Collection(name: "")
     ]
     
     func addNewCollection(collection: Collection) {
