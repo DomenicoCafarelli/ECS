@@ -8,6 +8,7 @@
 
 
 import SwiftUI
+import UIKit
 
 struct CardFront : View {
     let width : CGFloat
@@ -38,6 +39,10 @@ struct CardBack : View {
     @Binding var degree : Double
     let text : String
     
+    @State var text1: String = ""
+    @State var buttonText  = "Copy to clipboard"
+    @State var buttonColor = Color.gray.opacity(0.2)
+    let pasteboard = UIPasteboard.general
     
     var body: some View {
         
@@ -49,13 +54,16 @@ struct CardBack : View {
                 
                 Button {
                     //copy code function
+                    
+                    copyToClipboard()
+                    
                 } label: {
                     HStack{
-                        Text("Copy code")
+                        Text(buttonText)
                         Image(systemName: "doc.on.doc")
                     }.padding()
                     
-                        .background(Color.gray.opacity(0.2))
+                        .background(buttonColor)
                         .cornerRadius(5)
                 }
                 
@@ -72,4 +80,16 @@ struct CardBack : View {
             .border(.blue)
             .rotation3DEffect(Angle(degrees: degree), axis: (x: 0, y: 1, z: 0))
     }
+    func copyToClipboard() {
+        pasteboard.string = self.text
+        
+        self.buttonText = "Copied!"
+        self.buttonColor = Color.green.opacity(0.2)
+//        self.text = ""
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.buttonText = "Copy to clipboard"
+            self.buttonColor = Color.gray.opacity(0.2)
+        }
+}
+
 }
