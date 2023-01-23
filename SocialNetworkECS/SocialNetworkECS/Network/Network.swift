@@ -4,6 +4,8 @@
 //
 //  Created by Maria Smirnova on 23/01/23.
 //
+// swiftlint:disable all
+
 
 import Foundation
 import Combine
