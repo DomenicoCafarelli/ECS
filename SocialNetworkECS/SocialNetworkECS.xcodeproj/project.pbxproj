@@ -12,6 +12,10 @@
 		298CE05E2975917700FEF1DC /* NewCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298CE05D2975917700FEF1DC /* NewCollectionView.swift */; };
 		298CE060297598CA00FEF1DC /* CollectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298CE05F297598CA00FEF1DC /* CollectionModel.swift */; };
 		298CE0622975992D00FEF1DC /* CollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298CE0612975992D00FEF1DC /* CollectionViewModel.swift */; };
+		29D4CCA7297ECCBD004251EE /* Network+URLSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D4CCA6297ECCBD004251EE /* Network+URLSessionDelegate.swift */; };
+		29D4CCA9297ECCD6004251EE /* ResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D4CCA8297ECCD6004251EE /* ResponseHandler.swift */; };
+		29D4CCAB297ECCE9004251EE /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D4CCAA297ECCE9004251EE /* Network.swift */; };
+		29D4CCAD297ECCFF004251EE /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D4CCAC297ECCFF004251EE /* NetworkError.swift */; };
 		AA79B32229714E7300890E44 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA79B32129714E7300890E44 /* CardView.swift */; };
 		AA79B32429714EF400890E44 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA79B32329714EF400890E44 /* PostView.swift */; };
 		C0E123DD296F05EB005C9500 /* SocialNetworkECSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E123DC296F05EB005C9500 /* SocialNetworkECSApp.swift */; };
@@ -34,6 +38,10 @@
 		298CE05D2975917700FEF1DC /* NewCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCollectionView.swift; sourceTree = "<group>"; };
 		298CE05F297598CA00FEF1DC /* CollectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionModel.swift; sourceTree = "<group>"; };
 		298CE0612975992D00FEF1DC /* CollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewModel.swift; sourceTree = "<group>"; };
+		29D4CCA6297ECCBD004251EE /* Network+URLSessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Network+URLSessionDelegate.swift"; sourceTree = "<group>"; };
+		29D4CCA8297ECCD6004251EE /* ResponseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseHandler.swift; sourceTree = "<group>"; };
+		29D4CCAA297ECCE9004251EE /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		29D4CCAC297ECCFF004251EE /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		AA79B32129714E7300890E44 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		AA79B32329714EF400890E44 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 		C0E123D9296F05EB005C9500 /* SocialNetworkECS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialNetworkECS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,6 +70,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		29D4CCA4297ECBF1004251EE /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				29D4CCA6297ECCBD004251EE /* Network+URLSessionDelegate.swift */,
+				29D4CCA8297ECCD6004251EE /* ResponseHandler.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		29D4CCA5297ECC02004251EE /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				29D4CCAA297ECCE9004251EE /* Network.swift */,
+				29D4CCAC297ECCFF004251EE /* NetworkError.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		C0E123D0296F05EB005C9500 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +107,8 @@
 		C0E123DB296F05EB005C9500 /* SocialNetworkECS */ = {
 			isa = PBXGroup;
 			children = (
+				29D4CCA4297ECBF1004251EE /* Helpers */,
+				29D4CCA5297ECC02004251EE /* Network */,
 				C0E123F1296F08E9005C9500 /* Components */,
 				C0E123EC296F08B2005C9500 /* Model */,
 				C0E123EB296F08A0005C9500 /* ViewModel */,
@@ -235,6 +263,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29D4CCA7297ECCBD004251EE /* Network+URLSessionDelegate.swift in Sources */,
+				29D4CCA9297ECCD6004251EE /* ResponseHandler.swift in Sources */,
 				298CE0622975992D00FEF1DC /* CollectionViewModel.swift in Sources */,
 				290023D82971BB3F00533146 /* FeedView.swift in Sources */,
 				AA79B32229714E7300890E44 /* CardView.swift in Sources */,
@@ -243,10 +273,12 @@
 				C0E123FC29708A6A005C9500 /* CollectionSelection.swift in Sources */,
 				C0E123EE296F08C5005C9500 /* ProfileView.swift in Sources */,
 				2944299E29705FA800B73BD4 /* GridView.swift in Sources */,
+				29D4CCAB297ECCE9004251EE /* Network.swift in Sources */,
 				C0E124062970AC76005C9500 /* UserModel.swift in Sources */,
 				C0E123F0296F08D4005C9500 /* AddPostView.swift in Sources */,
 				C0E123F3296F08FA005C9500 /* ProfileHeader.swift in Sources */,
 				C0E123DD296F05EB005C9500 /* SocialNetworkECSApp.swift in Sources */,
+				29D4CCAD297ECCFF004251EE /* NetworkError.swift in Sources */,
 				C0E124042970AC67005C9500 /* UserViewModel.swift in Sources */,
 				C0E123F829705EFB005C9500 /* PostsModel.swift in Sources */,
 				298CE060297598CA00FEF1DC /* CollectionModel.swift in Sources */,
