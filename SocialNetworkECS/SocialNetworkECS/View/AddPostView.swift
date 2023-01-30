@@ -31,7 +31,9 @@ struct AddPostView: View {
             //publish the post
         //TODO: posterUsername is hardcoded needs to be passed to this view in oreder to create the post relative to a specific user
         var post = Post(description: addDescrField, imageName: "", code:  codeTextField, collections: ["Animations", "Buttons"])
+        
         self.postsViewModel.addNewPost(post: post)
+//        self.postsViewModel.create(description: String, imageName: String, code: String)
         self.presentationMode.wrappedValue.dismiss()
             }){
                     Text("Save")
@@ -51,6 +53,8 @@ struct AddPostView: View {
     
     @State private var codeTextField: String = ""
     @State private var addDescrField: String = ""
+    
+    
 
     var body: some View {
         VStack(alignment: .leading) {
