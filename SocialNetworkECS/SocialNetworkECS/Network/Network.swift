@@ -18,7 +18,8 @@ class Network: NSObject {
     let session: URLSession = URLSession(configuration: .default)
     
     /// URLComponents, use this to create and manipulate endpoints
-    var urlComponent = URLComponents(string: "https://api.escuelajs.co/api/v1")
+//    var urlComponent = URLComponents(string: "http://127.0.0.1:8080")
+    var urlComponent = URLComponents(string: "http://localhost:8080/postsJson")
     
     /// Decoder for JSON `Data`.
     lazy var decoder = JSONDecoder()

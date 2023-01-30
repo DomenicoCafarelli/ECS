@@ -23,8 +23,12 @@ struct FeedView: View {
             }
             .onAppear {
                 value.scrollTo(post.description)
+                    
             }
             
+        }
+        .task {
+            postViewModel.getPosts()
         }
     }
 }

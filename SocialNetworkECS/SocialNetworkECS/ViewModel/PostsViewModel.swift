@@ -36,7 +36,7 @@ class PostsViewModel: ObservableObject {
     
     //MARK: Network stuff
     
-    private let postPath = "/posts"
+    private let postPath = "/postsJson"
     private var observers: Set<AnyCancellable> = []
     
     func getPosts() {
@@ -51,6 +51,7 @@ class PostsViewModel: ObservableObject {
                     print("\(#function) success")
                 }
             } receiveValue: { [weak self] data in
+                print(data)
                 self?.postStore = data
             }
             .store(in: &observers)
