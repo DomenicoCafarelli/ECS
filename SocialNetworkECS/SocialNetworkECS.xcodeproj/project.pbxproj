@@ -18,6 +18,11 @@
 		29D4CCAD297ECCFF004251EE /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D4CCAC297ECCFF004251EE /* NetworkError.swift */; };
 		AA79B32229714E7300890E44 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA79B32129714E7300890E44 /* CardView.swift */; };
 		AA79B32429714EF400890E44 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA79B32329714EF400890E44 /* PostView.swift */; };
+		C035897E29801F0B000C5478 /* Users+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C035897C29801F0B000C5478 /* Users+CoreDataClass.swift */; };
+		C035897F29801F0B000C5478 /* Users+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C035897D29801F0B000C5478 /* Users+CoreDataProperties.swift */; };
+		C04CA38F298014BB00863330 /* SocialNetwork.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C04CA38D298014BB00863330 /* SocialNetwork.xcdatamodeld */; };
+		C04CA39429801E3800863330 /* Posts+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04CA39029801E3800863330 /* Posts+CoreDataClass.swift */; };
+		C04CA39529801E3800863330 /* Posts+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04CA39129801E3800863330 /* Posts+CoreDataProperties.swift */; };
 		C0E123DD296F05EB005C9500 /* SocialNetworkECSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E123DC296F05EB005C9500 /* SocialNetworkECSApp.swift */; };
 		C0E123DF296F05EB005C9500 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E123DE296F05EB005C9500 /* ContentView.swift */; };
 		C0E123E1296F05ED005C9500 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0E123E0296F05ED005C9500 /* Assets.xcassets */; };
@@ -44,6 +49,11 @@
 		29D4CCAC297ECCFF004251EE /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		AA79B32129714E7300890E44 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		AA79B32329714EF400890E44 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
+		C035897C29801F0B000C5478 /* Users+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Users+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C035897D29801F0B000C5478 /* Users+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Users+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C04CA38E298014BB00863330 /* SocialNetwork.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SocialNetwork.xcdatamodel; sourceTree = "<group>"; };
+		C04CA39029801E3800863330 /* Posts+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Posts+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C04CA39129801E3800863330 /* Posts+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Posts+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C0E123D9296F05EB005C9500 /* SocialNetworkECS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialNetworkECS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0E123DC296F05EB005C9500 /* SocialNetworkECSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialNetworkECSApp.swift; sourceTree = "<group>"; };
 		C0E123DE296F05EB005C9500 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -91,6 +101,11 @@
 		C0E123D0296F05EB005C9500 = {
 			isa = PBXGroup;
 			children = (
+				C035897C29801F0B000C5478 /* Users+CoreDataClass.swift */,
+				C035897D29801F0B000C5478 /* Users+CoreDataProperties.swift */,
+				C04CA39029801E3800863330 /* Posts+CoreDataClass.swift */,
+				C04CA39129801E3800863330 /* Posts+CoreDataProperties.swift */,
+				C04CA38D298014BB00863330 /* SocialNetwork.xcdatamodeld */,
 				C0E123DB296F05EB005C9500 /* SocialNetworkECS */,
 				C0E123DA296F05EB005C9500 /* Products */,
 			);
@@ -274,15 +289,20 @@
 				C0E123EE296F08C5005C9500 /* ProfileView.swift in Sources */,
 				2944299E29705FA800B73BD4 /* GridView.swift in Sources */,
 				29D4CCAB297ECCE9004251EE /* Network.swift in Sources */,
+				C04CA39429801E3800863330 /* Posts+CoreDataClass.swift in Sources */,
+				C04CA38F298014BB00863330 /* SocialNetwork.xcdatamodeld in Sources */,
 				C0E124062970AC76005C9500 /* UserModel.swift in Sources */,
 				C0E123F0296F08D4005C9500 /* AddPostView.swift in Sources */,
 				C0E123F3296F08FA005C9500 /* ProfileHeader.swift in Sources */,
+				C035897F29801F0B000C5478 /* Users+CoreDataProperties.swift in Sources */,
 				C0E123DD296F05EB005C9500 /* SocialNetworkECSApp.swift in Sources */,
 				29D4CCAD297ECCFF004251EE /* NetworkError.swift in Sources */,
 				C0E124042970AC67005C9500 /* UserViewModel.swift in Sources */,
 				C0E123F829705EFB005C9500 /* PostsModel.swift in Sources */,
 				298CE060297598CA00FEF1DC /* CollectionModel.swift in Sources */,
+				C04CA39529801E3800863330 /* Posts+CoreDataProperties.swift in Sources */,
 				C0E123FA29705F04005C9500 /* PostsViewModel.swift in Sources */,
+				C035897E29801F0B000C5478 /* Users+CoreDataClass.swift in Sources */,
 				AA79B32429714EF400890E44 /* PostView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -484,6 +504,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C04CA38D298014BB00863330 /* SocialNetwork.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C04CA38E298014BB00863330 /* SocialNetwork.xcdatamodel */,
+			);
+			currentVersion = C04CA38E298014BB00863330 /* SocialNetwork.xcdatamodel */;
+			path = SocialNetwork.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C0E123D1296F05EB005C9500 /* Project object */;
 }
