@@ -9,6 +9,7 @@
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Users" inverseName="post" inverseEntity="Users"/>
     </entity>
     <entity name="Users" representedClassName="Users" syncable="YES">
+        <attribute name="collections" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromDataTransformer" customClassName="[String]"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="userName" optional="YES" attributeType="String"/>
         <attribute name="userProfileImageName" optional="YES" attributeType="String"/>

@@ -2,7 +2,7 @@
 //  Users+CoreDataClass.swift
 //  SocialNetworkECS
 //
-//  Created by Domenico Cafarelli on 24/01/23.
+//  Created by Domenico Cafarelli on 30/01/23.
 //
 //
 
