@@ -33,7 +33,7 @@ struct AddPostView: View {
         var post = Post(description: addDescrField, imageName: "", code:  codeTextField, collections: ["Animations", "Buttons"])
         
         self.postsViewModel.addNewPost(post: post)
-//        self.postsViewModel.create(description: String, imageName: String, code: String)
+        self.postsViewModel.update(by: post.id, with: post)
         self.presentationMode.wrappedValue.dismiss()
             }){
                     Text("Save")
