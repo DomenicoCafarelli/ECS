@@ -12,6 +12,7 @@ struct ProfileView: View {
     
     @EnvironmentObject var postsViewModel : PostsViewModel
     @EnvironmentObject var userViewModel : UsersViewModel
+    
     @State var user : User
     
     var body: some View {
@@ -19,7 +20,7 @@ struct ProfileView: View {
             ScrollView(showsIndicators: false){
                 VStack{
                     ProfileHeader(user: $user)
-                    
+                    Button("Refresh", action: postsViewModel.getPosts)
                     Spacer()
                     
                     CollectionSelection(user: $user)

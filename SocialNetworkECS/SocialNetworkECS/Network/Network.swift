@@ -11,6 +11,59 @@ import Foundation
 import Combine
 
 class Network: NSObject {
+    
+    //MARK: from Mimmo's tutorial
+    
+    var posts: [Post] = []
+    
+//    func fetchPosts(completionHandler: @escaping ([Post]) -> Void) {
+//        var urlComponent = URLComponents(string: "http://localhost:8080/postsJson")
+//
+//      let task = URLSession.shared.dataTask(with: urlComponent, completionHandler: { (data, response, error) in
+//        if let error = error {
+//          print("Error with fetching films: \(error)")
+//          return
+//        }
+//
+//        guard let httpResponse = response as? HTTPURLResponse,
+//              (200...299).contains(httpResponse.statusCode) else {
+//          print("Error with the response, unexpected status code: \(response)")
+//          return
+//        }
+//
+//        if let data = data,
+//          let postSummary = try? JSONDecoder().decode(PostSummary.self, from: data) {
+//          completionHandler(postSummary.results ?? [])
+//        }
+//      })
+//      task.resume()
+//    }
+    
+//    private func fetchPost(withID id:Int, completionHandler: @escaping (Post) -> Void) {
+//        var urlComponent = URLComponents(string: "http://localhost:8080/postsJson")
+//
+//      let task = URLSession.shared.dataTask(with: urlComponent) { (data, response, error) in
+//        if let error = error {
+//          print("Error returning film id \(id): \(error)")
+//          return
+//        }
+//
+//        guard let httpResponse = response as? HTTPURLResponse,
+//          (200...299).contains(httpResponse.statusCode) else {
+//          print("Unexpected response status code: \(response)")
+//          return
+//        }
+//
+//        if let data = data,
+//          let post = try? JSONDecoder().decode(Post.self, from: data) {
+//            completionHandler(post)
+//        }
+//      }
+//      task.resume()
+//    }
+    
+    //MARK: original
+    
     /// Create a single instance on Network class
     static let shared = Network()
     
@@ -18,7 +71,6 @@ class Network: NSObject {
     let session: URLSession = URLSession(configuration: .default)
     
     /// URLComponents, use this to create and manipulate endpoints
-//    var urlComponent = URLComponents(string: "http://127.0.0.1:8080")
     var urlComponent = URLComponents(string: "http://localhost:8080/postsJson")
     
     /// Decoder for JSON `Data`.
@@ -32,7 +84,7 @@ class Network: NSObject {
             method: "GET",
             path: path
         )
-        return perform(request: request, decoder: decodeProducts(from:))
+        return perform(request: request, decoder: decodePosts(from:))
     }
  
     func create(path: String, post: CreatePost) -> AnyPublisher<Post, NetworkError> {
@@ -42,7 +94,7 @@ class Network: NSObject {
             path: path,
             body: post
         )
-        return perform(request: request, decoder: decodeProduct(from:))
+        return perform(request: request, decoder: decodePost(from:))
     }
     
     func update(path: String, with newPost: Post) -> AnyPublisher<Post, NetworkError> {
@@ -53,7 +105,7 @@ class Network: NSObject {
             body: newPost
         )
         
-        return perform(request: request, decoder: decodeProduct(from:))
+        return perform(request: request, decoder: decodePost(from:))
     }
     
     func delete(path: String) -> AnyPublisher<Bool, NetworkError> {

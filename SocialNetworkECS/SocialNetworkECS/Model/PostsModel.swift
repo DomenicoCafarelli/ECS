@@ -8,6 +8,7 @@
 
 import Foundation
 import SwiftUI
+import CoreData
 
 struct Post: Identifiable, Hashable, Codable {
     var id = UUID()
@@ -31,3 +32,7 @@ struct CreatePost: Codable {
     var collections : [String]
 }
 
+struct PostSummary: Codable {
+  let count: Int?
+  let results: [Post]?
+}

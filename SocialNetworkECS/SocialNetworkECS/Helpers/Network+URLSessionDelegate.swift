@@ -48,7 +48,7 @@ extension Network: URLSessionDelegate {
                       queryItems: [URLQueryItem]? = nil,
                       body: (any Codable)? = nil)
     -> URLRequest? {
-        urlComponent?.path = "/api/v1"+path
+        urlComponent?.path = path
         
         if let queryItems = queryItems {
             urlComponent?.queryItems = queryItems
@@ -76,14 +76,14 @@ extension Network: URLSessionDelegate {
     /// Decodes a JSON `Data` as an array of `Product`.
     ///
     /// - Throws: `NetworkError`.
-    func decodeProducts(from data: Data) throws -> [Post] {
+    func decodePosts(from data: Data) throws -> [Post] {
         try decoder.decode([Post].self, from: data)
     }
     
     /// Decodes a JSON `Data` as a `Product`.
     ///
     /// - Throws: `NetworkError`.
-    func decodeProduct(from data: Data) throws -> Post {
+    func decodePost(from data: Data) throws -> Post {
         try decoder.decode(Post.self, from: data)
     }
     
