@@ -65,11 +65,11 @@ class CoreDataController: ObservableObject {
     // MARK: - CRUD User Operations
 
     func createUser(id: UUID, code: String, userName: String, userProfileImageName: String, collections: [String]) -> Users? {
-        let newUser = NSEntityDescription.insertNewObject(forEntityName: usersEntityName, into: context) as? Users
-        newUser?.id = id
-        newUser?.userName = userName
-        newUser?.userProfileImageName = userProfileImageName
-        newUser?.collections = collections
+        let newUser = Users(context: context)
+        newUser.id = id
+        newUser.userName = userName
+        newUser.userProfileImageName = userProfileImageName
+        newUser.collections = collections
         save()
         return newUser
     }
