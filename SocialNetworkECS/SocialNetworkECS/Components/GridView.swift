@@ -23,20 +23,6 @@ struct GridView: View {
                     
                     ForEach(postsViewModel.postStore) { post in
                         
-                        //                            NavigationLink {
-                        //                                //                        Future Detail post view
-                        //    //                            PostView(post: post)
-                        //                                FeedView()
-                        //
-                        //
-                        //                            } label: {
-                        //                                post.image
-                        //                                    .resizable()
-                        //                                    .aspectRatio(contentMode: .fill)
-                        //                                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
-                        //                                    .clipped()
-                        //                                    .aspectRatio(1, contentMode: .fit)
-                        //                        }
                         NavigationLink(destination: FeedView(post: post),
                                        tag: post.id, selection: $selection) {
                             post.image
